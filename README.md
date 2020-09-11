@@ -16,5 +16,14 @@ PromiseMock.resolve(null, [
     console.log(result); // { mock: 'catch-me!' }
 });
 ```
+or no mock...
+```
+PromiseMock.resolve('initial').then(result => {
+    console.log(result); // initial
+    return 42;
+}).then(result => {
+    console.log(result); // 42
+});
+```
 
 More documentation coming soon, sorry!
