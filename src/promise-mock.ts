@@ -1,9 +1,9 @@
 export class PromiseMock {
-    private results: Array<any> = [];
+    private results: any[] = [];
     private callbackPointer: number = 0;
     private uncaughtError: boolean = false;
 
-    constructor(callback: Function, private resultsMock: Array<any> = []) {
+    constructor(callback: Function, private resultsMock: any[] = []) {
         callback(
             result => this.registerCallback(result),
             error => this.registerError(error)
@@ -51,11 +51,11 @@ export class PromiseMock {
         this.uncaughtError = true;
     }
 
-    static resolve(value: any, resultsMock?: Array<any>): PromiseMock {
+    static resolve(value: any, resultsMock?: any[]): PromiseMock {
         return new PromiseMock(resolve => resolve(value), resultsMock);
     }
 
-    static reject(error: string | Error, resultsMock?: Array<any>): PromiseMock {
+    static reject(error: string | Error, resultsMock?: any[]): PromiseMock {
         return new PromiseMock((resolve, reject) => reject(error), resultsMock);
     }
 }
