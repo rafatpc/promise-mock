@@ -6,8 +6,9 @@ Unit tests mocks made easy!
 
 ## Main features
 Fully synchronous operations
-Abillity to step through the promise execution chain
-Abillity to mock every step in the chain
+Abillity to step through the Promise's execution chain
+Abillity to mock the execution chain's results 
+Abillity to mock every step in the execution chain
 
 ## Examples
 
