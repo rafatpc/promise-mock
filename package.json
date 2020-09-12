@@ -1,15 +1,12 @@
 {
-    "name": "@ifq/promise-mock",
+    "name": "manual-promise-mock",
     "description": "Unit tests mocks made easy!",
     "author": "Liliyan Krumov",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "license": "ISC",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/rafatpc/promise-mock.git"
-    },
-    "publishConfig": {
-        "registry": "https://npm.pkg.github.com/"
+        "url": "git@github.com:rafatpc/promise-mock.git"
     },
     "bugs": {
         "url": "https://github.com/rafatpc/promise-mock/issues"
