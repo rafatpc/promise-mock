@@ -12,15 +12,20 @@
         "url": "https://github.com/rafatpc/promise-mock/issues"
     },
     "homepage": "https://github.com/rafatpc/promise-mock#readme",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
     "devDependencies": {
         "tslint": "^6.1.3",
         "typescript": "^4.0.2",
         "watch": "^1.0.2"
     },
-    "main": "src/index.ts",
     "scripts": {
         "build": "tsc",
         "examples": "node examples.js",
+        "prepublish": "npm run build",
 		"watch": "watch \"clear && npm run build && npm run examples\" src"
     }
 }
