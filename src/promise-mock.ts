@@ -1,16 +1,18 @@
+import { CallbackFn } from './types';
+
 export class PromiseMock {
     private results: any[] = [];
     private callbackPointer: number = 0;
     private uncaughtError: boolean = false;
 
-    constructor(callback: Function, private resultsMock: any[] = []) {
+    constructor(callback: CallbackFn, private resultsMock: any[] = []) {
         callback(
             result => this.registerCallback(result),
             error => this.registerError(error)
         );
     }
 
-    then(callback: Function): PromiseMock {
+    then(callback: CallbackFn): PromiseMock {
         if (this.uncaughtError) {
             return this;
         }
@@ -18,7 +20,7 @@ export class PromiseMock {
         return this.invokeCallback(callback);
     }
 
-    catch(callback: Function): PromiseMock {
+    catch(callback: CallbackFn): PromiseMock {
         if (!this.uncaughtError) {
             return this;
         }
@@ -28,7 +30,11 @@ export class PromiseMock {
         return this.invokeCallback(callback);
     }
 
-    private invokeCallback(callback: Function): PromiseMock {
+    finally(callback: CallbackFn): PromiseMock {
+        return this.invokeCallback(callback);
+    }
+
+    private invokeCallback(callback: CallbackFn): PromiseMock {
         this.callbackPointer++;
 
         try {

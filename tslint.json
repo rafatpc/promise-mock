@@ -5,6 +5,7 @@
     ],
     "jsRules": true,
     "rules": {
+        "whitespace": true,
 		"linebreak-style": [true, "CRLF"],
 		"indent": [true, "spaces", 4],
 		"eofline": true

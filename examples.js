@@ -1,6 +1,6 @@
 const { PromiseMock, PromiseMockStep } = require('./dist/index');
 
-// Make the promise synchronous:
+// Make the Promise synchronous:
 const syncPromise = PromiseMock.resolve({ mock: 'first-one!' });
 
 syncPromise
@@ -12,7 +12,7 @@ syncPromise
         console.log(rs); // 42
     });
 
-// Make the promise synchronous and mock the execution's chain results: 
+// Make the Promise synchronous and mock the execution chain's results: 
 const syncPromiseMocks = PromiseMock.resolve(null, [
     { mock: 'first-one!' },
     { mock: 'second-one!' },
@@ -31,6 +31,7 @@ syncPromiseMocks
         console.log(result); // { mock: 'catch-me!' }
     });
 
+// Stepping through the Promise's execution chain:
 const stepPromise = new PromiseMockStep.resolve({mock: 'data'});
 
 stepPromise

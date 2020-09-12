@@ -27,7 +27,7 @@ syncPromise
     });
 ```
 
-Make the Promise synchronous and mock the execution's chain results: 
+Make the Promise synchronous and mock the execution chain's results: 
 ```javascript
 import { PromiseMock } from 'manual-promise-mock';
 

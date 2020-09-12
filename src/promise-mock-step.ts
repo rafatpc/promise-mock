@@ -1,4 +1,4 @@
-import {Callback, CallbackFn, CallbackType} from './types';
+import { Callback, CallbackFn, CallbackType } from './types';
 
 export class PromiseMockStep {
     private results: any[] = [];
