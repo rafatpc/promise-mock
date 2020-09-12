@@ -2,7 +2,7 @@
     "name": "manual-promise-mock",
     "description": "Unit tests mocks made easy!",
     "author": "Liliyan Krumov",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "ISC",
     "repository": {
         "type": "git",
@@ -26,6 +26,6 @@
         "build": "tsc",
         "examples": "node examples.js",
         "prepublish": "npm run build",
-		"watch": "watch \"clear && npm run build && npm run examples\" src"
+        "watch": "watch \"clear && npm run build && npm run examples\" src"
     }
 }
