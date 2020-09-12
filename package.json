@@ -1,6 +1,19 @@
 {
     "name": "manual-promise-mock",
     "description": "Unit tests mocks made easy!",
+    "keywords": [
+        "unit",
+        "tests",
+        "promise",
+        "mock",
+        "sync",
+        "synchronous",
+        "step",
+        "testing",
+        "mocks",
+        "jest",
+        "jasmine"
+    ],
     "author": "Liliyan Krumov",
     "version": "1.0.2",
     "license": "ISC",
