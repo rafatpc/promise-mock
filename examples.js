@@ -1,17 +1,35 @@
-const {PromiseMock, PromiseMockStep} = require('./dist/index');
+const { PromiseMock, PromiseMockStep } = require('./dist/index');
 
-PromiseMock.resolve(null, [
+// Make the promise synchronous:
+const syncPromise = PromiseMock.resolve({ mock: 'first-one!' });
+
+syncPromise
+    .then(rs => {
+        console.log(rs); // { mock: 'first-one!' }
+        return 42;
+    })
+    .then(rs => {
+        console.log(rs); // 42
+    });
+
+// Make the promise synchronous and mock the execution's chain results: 
+const syncPromiseMocks = PromiseMock.resolve(null, [
     { mock: 'first-one!' },
     { mock: 'second-one!' },
     { mock: 'catch-me!' },
-]).then(result => {
-    console.log(result); // { mock: 'first-one!' }
-}).then(result => {
-    console.log(result); // { mock: 'second-one!' }
-    throw new Error('Oh, no!');
-}).catch(result => {
-    console.log(result); // { mock: 'catch-me!' }
-});
+]);
+
+syncPromiseMocks
+    .then(rs => {
+        console.log(rs); // { mock: 'first-one!' }
+    })
+    .then(rs => {
+        console.log(rs); // { mock: 'second-one!' }
+        throw new Error('Oh, no!');
+    })
+    .catch(rs => {
+        console.log(result); // { mock: 'catch-me!' }
+    });
 
 const stepPromise = new PromiseMockStep.resolve({mock: 'data'});
 
