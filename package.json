@@ -1,5 +1,5 @@
 {
-    "name": "promise-mock",
+    "name": "@ifq/promise-mock",
     "description": "Unit tests mocks made easy!",
     "author": "Liliyan Krumov",
     "version": "0.0.1",
@@ -7,6 +7,9 @@
     "repository": {
         "type": "git",
         "url": "git+https://github.com/rafatpc/promise-mock.git"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/"
     },
     "bugs": {
         "url": "https://github.com/rafatpc/promise-mock/issues"
